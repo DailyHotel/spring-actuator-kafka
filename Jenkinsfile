@@ -5,5 +5,5 @@ publishComPipeline containers: [
                 name: 'openjdk'
             ]
         ], {
-    publishMaven script: 'bash mvnw clean deploy -Dversion=`git rev-parse HEAD | cut -c1-10`'
+    publishMaven script: 'bash mvnw clean deploy -Dproject.version=`git rev-parse HEAD | cut -c1-10`'
 }
