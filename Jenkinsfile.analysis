@@ -1,0 +1,9 @@
+library identifier: 'yanolja-pipeline-library', changelog: false
+
+analysisRepoPipeline containers: [
+            [
+                name: 'openjdk'
+            ]
+        ], {
+    analysisJava script: 'bash mvnw clean package sonar:sonar -Dsurefire.useSystemClassLoader=false -Dproject.version=`git rev-parse HEAD | cut -c1-10`'
+}
